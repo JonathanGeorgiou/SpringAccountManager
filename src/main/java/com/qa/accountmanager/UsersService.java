@@ -7,12 +7,20 @@ import org.springframework.stereotype.Service;
  * UsersService
  */
 
-
 @Service
- public class UsersService {
+public class UsersService {
 
     @Autowired
     private UserRepo userRepo;
 
+    public UserRepo getUserRepo() {
+        return this.userRepo;
+    }
+
+    public void setUserRepo(UserRepo userRepo) {
+        this.userRepo = userRepo;
+    }
+
     
+
 }

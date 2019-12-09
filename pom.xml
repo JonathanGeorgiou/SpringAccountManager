@@ -30,17 +30,6 @@
         </dependency>
 		
 		<dependency>
-<<<<<<< HEAD
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>8.0.18</version>
-	<scope>runtime</scope>
-</dependency>
-<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-=======
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
@@ -50,7 +39,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
->>>>>>> 4b1a4ca03e3f922ee6d0756eae596b67182e593e
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
