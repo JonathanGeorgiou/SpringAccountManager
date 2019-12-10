@@ -1,6 +1,8 @@
 package com.qa.accountmanager;
 
-import static org.junit.Assert.assertTrue;
+//import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -21,13 +23,19 @@ public class CreateUserTest {
 	@Mock
 	private UserRepo repo;
 
+	@Mock
+	private RandomNumber randNum;
+
+	@Mock
+	private PrizeDraw prizeDraw;
+
 	@Test
 	public void createUserTest() {
 
-		Users myUser = new Users();
+		Users myUser = new Users("Harris", "Hanley");
 
 		Mockito.when(repo.save(myUser)).thenReturn(myUser);
-		assertTrue("Harris", this.service.createUser(myUser));
+		assertEquals(myUser, this.service.createUser(myUser));
 
 
 	}
