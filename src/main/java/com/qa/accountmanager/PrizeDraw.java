@@ -1,5 +1,4 @@
 package com.qa.accountmanager;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -8,7 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class PrizeDraw {
     
-    @Autowired
     public int draw(String accNumber) {
         
         String firstLetter = Character.toString(accNumber.charAt(0)).toLowerCase();

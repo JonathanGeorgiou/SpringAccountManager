@@ -10,14 +10,7 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		
 		SpringApplication.run(DemoApplication.class, args);
-		PrizeDraw test = new PrizeDraw();
-
-		String arg = "c8088111111";
-
-		int myTest = test.draw(arg);
-		System.out.println(myTest);
-
-
+		
 	}
 	
 
