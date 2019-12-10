@@ -13,14 +13,15 @@ public class UsersService {
 
     private RandomNumber rand;
 
+    public UsersService(RandomNumber rand, UserRepo userRepo, PrizeDraw pz) {
+        this.rand = rand;
+        this.userRepo = userRepo;
+        this.pz = pz;
+    }
+
     private UserRepo userRepo;
 
     private PrizeDraw pz;
-
-    public UsersService(PrizeDraw prizeDraw, RandomNumber rand, UserRepo userRepo) {
-        this.rand = rand;
-        this.userRepo = userRepo;
-    }
 
     public Users createUser(Users user) {
         
@@ -35,11 +36,11 @@ public class UsersService {
     }
 
     public Users updateUser(Users user, Long id) {
+        
         Users toUpdate = this.userRepo.getOne(id);
         toUpdate.setFirstName(user.getFirstName());
         toUpdate.setLastName(user.getLastName());
-        toUpdate.setAccountNumber(user.getAccountNumber());
-        toUpdate.setWinnings(user.getWinnings());
+    
         return toUpdate;
     }
 

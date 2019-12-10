@@ -23,6 +23,9 @@ public class Users {
     private String accountNumber;
     private int winnings;
 
+    public Users() {
+    }
+
     
 
     public void setId(Long id) {
