@@ -1,12 +1,30 @@
 package com.qa.accountmanager;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import java.util.*;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import junit.framework.Assert;
 
-class RandomNumberTest {
+@RunWith(SpringRunner.class)
+class CreateUserTest {
+
+	@InjectMocks
+	private UsersService service;
+
+	@Mock
+	private UserRepo repo;
+
+	@Test
+	public void myTest() {
+
+		List<Users> u = new ArrayList<>();
+
+		//this.service.createUser(user);
+	}
+
 
 	@Test
 	void test() {
