@@ -24,12 +24,13 @@ import org.springframework.stereotype.Service;
     	
     }
     
-    public void updateUser(Users user, Long id) {
+    public Users updateUser(Users user, Long id) {
     	Users toUpdate = this.userRepo.getOne(id);
     	toUpdate.setFirstName(user.getFirstName());
     	toUpdate.setLastName(user.getLastName());
     	toUpdate.setAccountNumber(user.getAccountNumber());
     	toUpdate.setWinnings(user.getWinnings());
+    	return toUpdate;
     }
     
     public void deleteUser(Long id) {
