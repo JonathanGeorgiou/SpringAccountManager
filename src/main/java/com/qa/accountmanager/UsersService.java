@@ -37,7 +37,8 @@ public class UsersService {
 
     public Users updateUser(Users user, Long id) {
         
-        Users toUpdate = this.userRepo.getOne(id);
+        //need to use the setters and getters to find the ID
+        Users toUpdate = this.userRepo.findById(id).get();
         toUpdate.setFirstName(user.getFirstName());
         toUpdate.setLastName(user.getLastName());
     

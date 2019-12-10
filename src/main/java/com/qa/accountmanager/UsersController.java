@@ -30,7 +30,7 @@ public class UsersController {
 		
 	}
 	@PutMapping("/updateUser")
-	public Users updateUser(@PathParam ("id")Long id, @RequestBody Users user ) {
+	public Users updateUser(@PathParam ("id")Long id, @RequestBody Users user) {
 		return this.service.updateUser(user, id);
 		
 	}
