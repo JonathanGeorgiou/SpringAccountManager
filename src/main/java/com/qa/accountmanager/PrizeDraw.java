@@ -58,4 +58,9 @@ public class PrizeDraw {
         }
         return 0;
     }
+
+    public int getPrize(Users user){
+        PrizeDraw prize = new PrizeDraw();
+        return prize.draw(user.getAccountNumber());
+}
 }

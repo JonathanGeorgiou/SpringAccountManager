@@ -3,6 +3,9 @@ package com.qa.accountmanager;
 import javax.persistence.Entity;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import ch.qos.logback.core.Context;
+
 import javax.persistence.GeneratedValue;
 
 /**
@@ -10,7 +13,6 @@ import javax.persistence.GeneratedValue;
  */
 
 @Entity
-
 public class Users {
 
     @Id
@@ -18,7 +20,7 @@ public class Users {
     private Long id;
     private String firstName;
     private String lastName;
-    private long accountNumber;
+    private String accountNumber;
     private int winnings;
 
     
@@ -26,10 +28,6 @@ public class Users {
     public void setId(Long id) {
         this.id = id;
     }
-
-    
-
-    
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -42,12 +40,11 @@ public class Users {
         this.lastName = lastName;
     }
 
-    public Users(String firstName, String lastName, long accountNumber, int winnings) {
+    public Users(String firstName, String lastName) {
 
         this.firstName = firstName;
         this.lastName = lastName;
-        this.accountNumber = accountNumber;
-        this.winnings = winnings;
+      
     }
 
     public Long getId() {
@@ -62,11 +59,11 @@ public class Users {
         return this.lastName;
     }
 
-    public long getAccountNumber() {
+    public String getAccountNumber() {
         return this.accountNumber;
     }
 
-    public void setAccountNumber(long accountNumber) {
+    public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 
