@@ -1,18 +1,57 @@
 package com.qa.accountmanager;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 /**
  * UsersService
  */
 
-
 @Service
- public class UsersService {
+public class UsersService {
 
-    @Autowired
+    private RandomNumber rand;
+
+    public UsersService(RandomNumber rand, UserRepo userRepo, PrizeDraw pz) {
+        this.rand = rand;
+        this.userRepo = userRepo;
+        this.pz = pz;
+    }
+
     private UserRepo userRepo;
 
+    private PrizeDraw pz;
+
+    public Users createUser(Users user) {
+        
+        user.setAccountNumber(this.rand.randNumGen());
+        user.setWinnings(this.pz.getPrize(user));
+        return this.userRepo.save(user);
+    }
+
+    public List<Users> readUsers() {
+        return this.userRepo.findAll();
+
+    }
+
+    public Users updateUser(Users user, Long id) {
+        
+        //need to use the setters and getters to find the ID
+        Users toUpdate = this.userRepo.findById(id).get();
+        toUpdate.setFirstName(user.getFirstName());
+        toUpdate.setLastName(user.getLastName());
     
+        return toUpdate;
+    }
+
+    public void deleteUser(Long id) {
+        this.userRepo.deleteById(id);
+
+    }
+
+   
+
+    
+
 }

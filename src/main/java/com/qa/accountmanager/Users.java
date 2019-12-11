@@ -1,40 +1,37 @@
 package com.qa.accountmanager;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.Table;
+
+
+
+import javax.persistence.GeneratedValue;
 
 /**
  * Users
  */
 
 @Entity
- public class Users {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String firstName;
     private String lastName;
-    private long accountNumber;
+    private String accountNumber;
     private int winnings;
 
     public Users() {
     }
 
+    
 
-    /**
-     * @param id the id to set
-     */
     public void setId(Long id) {
         this.id = id;
     }
 
-    /**
-     * @param firstName the firstName to set
-     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -46,13 +43,11 @@ import javax.persistence.Id;
         this.lastName = lastName;
     }
 
-
-    public Users(String firstName, String lastName, long accountNumber, int winnings) {
+    public Users(String firstName, String lastName) {
 
         this.firstName = firstName;
         this.lastName = lastName;
-        this.accountNumber = accountNumber;
-        this.winnings = winnings;
+      
     }
 
     public Long getId() {
@@ -63,17 +58,15 @@ import javax.persistence.Id;
         return this.firstName;
     }
 
-
     public String getLastName() {
         return this.lastName;
     }
 
-
-    public long getAccountNumber() {
+    public String getAccountNumber() {
         return this.accountNumber;
     }
 
-    public void setAccountNumber(long accountNumber) {
+    public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 
@@ -84,5 +77,5 @@ import javax.persistence.Id;
     public void setWinnings(int winnings) {
         this.winnings = winnings;
     }
-  
+
 }
